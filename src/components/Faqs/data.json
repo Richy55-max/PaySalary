@@ -1,0 +1,26 @@
+{
+  "header": [
+    {
+      "title": "Questions fréquemment posées"
+    }
+  ],
+
+  "faqs": [
+    {
+      "title": "How can I receive money with Moneex?",
+      "description": " Receiving money with your Moneex account is simple. Create a payment request link by clicking the 'Payment Link' button on your Moneex app, then add the recipient's details, the amount, and the currency."
+    },
+    {
+      "title": "Recevoir de l'argent avec Moneex?",
+      "description": "Pour recevoir de l’argent avec Moneex, vous pouvez créer un lien de demande de paiement en cliquant sur le bouton de demande de paiement depuis votre application."
+    },
+    {
+      "title": "Will I be charged to get bank details ?",
+      "description": "No, we do not charge for opening any accounts or getting bank details. It is free to sign up and open a multi-currency account on Moneex."
+    },
+    {
+      "title": "L'obtention de coordonnées bancaires associées à mon compte?",
+      "description": "Non, nous ne facturons pas nos utilisateurs pour l'ouverture d'un compte ni pour l'obtention de coordonnées bancaires dans les devises disponibles. Créez gratuitement votre compte multi-devises Moneex."
+    }
+  ]
+}
