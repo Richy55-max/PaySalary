@@ -9,6 +9,8 @@ import {
   VisuallyHidden,
   chakra,
   useColorModeValue,
+  Flex,
+  HStack,
 } from "@chakra-ui/react";
 import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import styles from "../../app/page.module.css";
@@ -64,40 +66,24 @@ export default function Footer() {
   return (
     <Box
       color={useColorModeValue("gray.700", "gray.200")}
-      borderWidth={1}
-      borderColor={useColorModeValue("gray.200", "gray.900")}
       className={styles.container}
     >
-      <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} py={10} spacing={8}>
+      <Flex justifyContent={'space-between'} padding={'50px 0'}>
         <Stack spacing={6}>
           <Box>
             <Logo color={useColorModeValue("gray.700", "white")} />
+            <Text mt={10}>Lorem ipsum text.......</Text>
           </Box>
         </Stack>
 
-        <Stack align={"flex-start"}>
-          <ListHeader>Company</ListHeader>
-          <Link href={"#"}>About Us</Link>
-          <Link href={"#"}>Blog</Link>
-          <Link href={"#"}>Careers</Link>
-          <Link href={"#"}>Contact Us</Link>
-        </Stack>
-
-        <Stack align={"flex-start"}>
-          <ListHeader>Support</ListHeader>
-          <Link href={"#"}>Help Center</Link>
-          <Link href={"#"}>Safety Center</Link>
-          <Link href={"#"}>Community Guidelines</Link>
-        </Stack>
-
-        <Stack align={"flex-start"}>
-          <ListHeader>Legal</ListHeader>
-          <Link href={"#"}>Cookies Policy</Link>
-          <Link href={"#"}>Privacy Policy</Link>
-          <Link href={"#"}>Terms of Service</Link>
-          <Link href={"#"}>Law Enforcement</Link>
-        </Stack>
-      </SimpleGrid>
+        <HStack align={"flex-start"} className="footer-label">
+          <Link href={"#"}>Features</Link>
+          <Link href={"#"}>Pricing</Link>
+          <Link href={"#"}>Testimonials</Link>
+          <Link href={"#"}>Faq</Link>
+          <Link href={"#"}>Support</Link>
+        </HStack>
+      </Flex>
 
       <Box
         borderTopWidth={1}
@@ -113,7 +99,7 @@ export default function Footer() {
           justify={{ md: "space-between" }}
           align={{ md: "center" }}
         >
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2023 Easy salary. All rights reserved</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Twitter"} href={"#"}>
               <FaTwitter />
