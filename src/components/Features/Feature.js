@@ -20,7 +20,6 @@ export default function Features() {
         lineHeight={"150%"}
         textAlign={{ base: "center", md: "center", lg: "center" }}
         position={"relative"}
-        zIndex={"100"}
         color="#1f1f30"
       >
         EasySalary c&apos;est la Simplicité

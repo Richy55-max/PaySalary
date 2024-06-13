@@ -2,9 +2,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -39,6 +39,7 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  --backdrop-blur: blur(4px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,8 +102,16 @@ a {
   text-decoration: none;
 }
 
+#sticky-position {
+  position: fixed !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: var(--backdrop-blur);
+  border-bottom-width: 1px;
+  border-color: rgba(235, 239, 244, 1);
+}
+
 #step {
- background-color: #f5f6ff;
+  background-color: #f5f6ff;
 }
 
 .footer-label a {
@@ -111,11 +120,10 @@ a {
   border-radius: 5px;
 }
 
-.footer-label a:hover{
+.footer-label a:hover {
   text-decoration: none;
   background: #f5f6ff;
 }
-
 
 @media screen and (max-width: 759px) {
   .stack-image-item2,

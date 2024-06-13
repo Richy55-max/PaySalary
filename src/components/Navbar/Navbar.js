@@ -15,12 +15,35 @@ import {
   useDisclosure,
   Divider,
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
 
 import styles from '../../app/page.module.css';
 import { NAV_ITEMS } from './data';
+
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const [scrollYPosition, setScrollYPosition] = useState(0);
+
+  const handleScroll = () => {
+    const newScrollYPosition = window.scrollY;
+    setScrollYPosition(newScrollYPosition);
+
+    const navbar = document.querySelector('.navbar');
+
+    if (navbar && newScrollYPosition >= 40) {
+      navbar.setAttribute('id', 'sticky-position');
+    } else {
+      navbar.removeAttribute('id');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <Box>
@@ -91,7 +114,7 @@ export default function Navbar() {
 
 const DesktopNav = () => {
   const linkColor = '#1f2130';
-  const linkHoverColor = useColorModeValue('#1f2130', '#1f2130');
+  const linkHoverColor = '#5466f9';
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -106,10 +129,10 @@ const DesktopNav = () => {
             marginRight='10px'
             padding='10px 10px'
             borderRadius='5px'
+            transition={'ease .3s'}
             _hover={{
               textDecoration: 'none',
               color: linkHoverColor,
-              background: '#f5f6ff',
             }}
           >
             {navItem.label}

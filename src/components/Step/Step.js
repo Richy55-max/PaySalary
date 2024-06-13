@@ -55,7 +55,6 @@ export default function Trust() {
         lineHeight={'150%'}
         textAlign={{ base: 'center', md: 'center', lg: 'center' }}
         position={'relative'}
-        zIndex={'100'}
         color='#1f1f30'
         pb={50}
         pt={50}
