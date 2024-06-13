@@ -56,7 +56,7 @@ export default function CallToActionWithAnnotation() {
             bg: "#081fde",
           }}
         >
-          Voir le demo
+          Voir la demo
         </Button>
         <Button
           colorScheme={"green"}
