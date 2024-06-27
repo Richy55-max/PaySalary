@@ -49,8 +49,6 @@ export default function Navbar() {
     <Box>
       <Flex
         className={styles.container}
-        // bg={useColorModeValue("white", "gray.800")}
-        // color={"#fff"}
         minH={'80px'}
         py={{ base: 2 }}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
@@ -61,7 +59,8 @@ export default function Navbar() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={'#1f2130'}
-            fontSize={'16px'}
+            fontSize={'1rem'}
+            fontWeight={'bold'}
           >
             Logo
           </Text>
@@ -77,9 +76,23 @@ export default function Navbar() {
           spacing={6}
         >
           <Button
+            as={'a'}
+            variant={'link'}
+            fontSize={'1rem'}
+            fontWeight={500}
+            href={'#'}
+            color={'#1f2130'}
+            _hover={{
+              color: '#5466f9',
+            }}
+          >
+            Sign In
+          </Button>
+
+          <Button
             className={styles.desktopNav}
             as={'a'}
-            fontSize={'16px'}
+            fontSize={'1rem'}
             fontWeight={600}
             color={'white'}
             backgroundColor={'#5466f9'}
@@ -88,7 +101,7 @@ export default function Navbar() {
               bg: '#081fde',
             }}
           >
-            Sign In
+            Sign Up
           </Button>
         </Stack>
 
@@ -123,7 +136,7 @@ const DesktopNav = () => {
           <Link
             p={2}
             href={navItem.href ?? '#'}
-            fontSize={'16px'}
+            fontSize={'1rem'}
             fontWeight={500}
             color={linkColor}
             marginRight='10px'
@@ -155,7 +168,7 @@ const MobileNav = () => {
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <Button
           as={'a'}
-          fontSize={'16px'}
+          fontSize={'1rem'}
           fontWeight={600}
           color={'white'}
           backgroundColor={'#5466f9'}
