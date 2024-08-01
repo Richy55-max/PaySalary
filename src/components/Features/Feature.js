@@ -12,7 +12,7 @@ import {
 
 export default function Features() {
   return (
-    <Stack spacing={6} className="feature" maxW={"100%"} pb={150}>
+    <Stack spacing={6} className="feature" maxW={"100%"} pt={100} pb={150}>
       <Heading
         fontFamily={"Inter"}
         fontWeight={800}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "Simplicité et rapidité",
+    "description": "Simplifiez le processus de versement des salaires en permettant aux employeurs de télécharger un fichier contenant les informations des employés, ce qui réduit les tâches administratives et économise du temps précieux."
+  },
+  {
+    "id": "2",
+    "title": "Rapidité des paiements",
+    "description": "Grâce à cette solution, les employés reçoivent leur salaire directement sur leur compte Mobile Money de manière rapide."
+  },
+  {
+    "id": "3",
+    "title": "Accessibilité et praticité",
+    "description": " Offrez aux employés une méthode de paiement pratique, car ils peuvent accéder à leurs fonds à tout moment via leur téléphone mobile et effectuer des transactions ou des retraits selon leurs besoins."
+  }
+]

@@ -1,19 +1,20 @@
 'use client';
 
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-  Flex,
-} from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
+import { default as data } from './data.json';
 
-const newFeatures = () => {
+const Feature = () => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleClick = (id) => {
+    setSelectedItem(id);
+  };
+
   const imageStyle = {
     borderRadius: '12px',
+    height: '100%',
   };
 
   return (
@@ -23,90 +24,47 @@ const newFeatures = () => {
       gap={10}
       width={'100%'}
     >
-      <Box width={'50%'}>
-        <Accordion defaultIndex={[0]} allowMultiple>
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box
-                  as='span'
-                  flex='1'
-                  textAlign='left'
-                  fontWeight={'500'}
-                  color='#1f1f30'
-                >
-                  Section 1 title
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel
-              pb={4}
-              color='#000'
-              fontWeight={'400'}
-              fontSize={'1rem'}
-              lineHeight={'25px'}
+      <VStack alignItems={'flex-start'} w={'50%'} gap={2}>
+        {data.map((item, index) => (
+          <Box
+            key={item.id}
+            className={
+              selectedItem === item.id ||(selectedItem === null && index === 0)
+                ? 'feature-content-box'
+                : ''
+            }
+            padding={'1rem 24px'}
+            borderRadius={'xl'}
+            cursor={'pointer'}
+            onClick={() => handleClick(item.id)}
+          >
+            <Heading
               fontFamily={'Inter'}
+              fontWeight={500}
+              fontSize={{ base: '22px', sm: '22px', md: '22px' }}
+              lineHeight={'28px'}
+              position={'relative'}
+              color='#1f1f30'
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-              <Box display={'none'}>
-                <Image
-                  src={'https://bit.ly/2Z4KKcF'}
-                  alt={'features-image'}
-                  height={100}
-                  width={500}
-                  loading='lazy'
-                />
-              </Box>
-            </AccordionPanel>
-          </AccordionItem>
-
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box
-                  as='span'
-                  flex='1'
-                  textAlign='left'
-                  fontWeight={'500'}
-                  color='#1f1f30'
-                >
-                  Rapidité des paiements
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel
-              pb={4}
-              color='#000'
-              fontWeight={'400'}
-              fontSize={'1rem'}
-              lineHeight={'25px'}
+              {item.title}
+            </Heading>
+            <Text
+              as={'h2'}
+              fontSize='1rem'
               fontFamily={'Inter'}
+              fontWeight={'400'}
+              lineHeight={'22px'}
+              color={'#41415a'}
+              marginTop='10px !important'
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-              <Box display={'none'}>
-                <Image
-                  src={'https://bit.ly/naruto-sage'}
-                  alt={'features-image'}
-                  height={100}
-                  width={500}
-                  loading='lazy'
-                />
-              </Box>
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Box>
+              {item.description}
+            </Text>
+          </Box>
+        ))}
+      </VStack>
 
-      <Box width={'50%'} position={'relative'}>
-        <div style={{ width: '100%', height: '100%' }}>
+      <Box position={'relative'}>
+        <div style={{ height: '100%', aspectRatio: '1/1' }}>
           {' '}
           <Image
             src={'https://bit.ly/2Z4KKcF'}
@@ -114,23 +72,13 @@ const newFeatures = () => {
             height={100}
             width={500}
             loading='lazy'
+            priority={false}
             style={imageStyle}
           />
         </div>
-        {/* <div style={{ width: '100%', height: '100%' }}>
-          {' '}
-          <Image
-            src={'https://bit.ly/naruto-sage'}
-            alt={'features-image'}
-            height={100}
-            width={500}
-            loading='lazy'
-            style={imageStyle}
-          />
-        </div> */}
       </Box>
     </Box>
   );
 };
 
-export default newFeatures;
+export default Feature;

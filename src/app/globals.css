@@ -110,6 +110,10 @@ a {
   background-color: #f5f6ff;
 }
 
+.feature-content-box{
+   background-color: aliceblue;
+}
+
 .footer-label a {
   margin-right: 10px;
   padding: 5px 10px;
