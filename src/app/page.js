@@ -22,11 +22,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='features'>
+      {/* <section id='features'>
         <div className={styles.container}>
           <Features />
         </div>
-      </section>
+      </section> */}
 
       <section id='trust'>
         <div className={styles.container}>
